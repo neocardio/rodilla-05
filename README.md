@@ -1,6 +1,6 @@
-# Rodilla 05
+# Rodilla 05 · Modo Oso Monarca
 
-Aplicación web en español, adaptable a celular, para rutinas conservadoras de casa a las 05:00 y gimnasio. No diagnostica una lesión ni prescribe recuperación posquirúrgica.
+Aplicación web en español, adaptable a celular, para rutinas conservadoras de casa a las 05:00 y gimnasio. La versión Oso Monarca añade guía visual de posición inicial y movimiento, flechas de dirección, claves técnicas, mensajes motivacionales y reconocimiento de constancia. No diagnostica una lesión ni prescribe recuperación posquirúrgica.
 
 ## Uso
 
@@ -33,6 +33,6 @@ Los tiempos, dosis iniciales, umbral de dolor 2/10 y reglas de tres sesiones son
 
 ## Desarrollo y verificación
 
-`node tests/core.test.js` valida filtros de alarma, dosis iniciales, fecha de México y bloqueo de progresión. `node --check app.js` verifica sintaxis. Para reconstruir `index.html`, sustituir los marcadores `/* CORE */` y `/* APP */` en `template.html` por el contenido literal de `core.js` y `app.js`.
+`node tests/core.test.js` valida filtros de alarma, dosis iniciales, fecha de México y bloqueo de progresión. `node --check app.js` verifica sintaxis. Para reconstruir `index.html`, sustituir los marcadores `/* CORE */` y `/* APP */` en `template.html` por el contenido literal de `core.js` y `app.js`. `monarch.css` contiene la identidad visual y las secuencias SVG se generan desde `app.js`.
 
 Publicar la carpeta `rodilla-05` en la raíz de un sitio GitHub Pages existente permite acceder en `/rodilla-05/`, sin modificar su página principal. Versionar el nombre de caché en `sw.js` al actualizar recursos.

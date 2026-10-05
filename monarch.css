@@ -1,0 +1,116 @@
+:root {
+  --bg: #071422;
+  --card: #10243a;
+  --line: #30445a;
+  --text: #fff8e9;
+  --muted: #b9c4cf;
+  --mint: #f6b83f;
+  --lav: #f27a35;
+  --amber: #ffd166;
+  --orange: #f27a35;
+  --cream: #fff3d4;
+}
+
+body {
+  background:
+    radial-gradient(circle at 88% 5%, #f27a3520 0, transparent 25%),
+    radial-gradient(circle at 12% 42%, #f6b83f0d 0, transparent 30%),
+    var(--bg);
+}
+
+header { border-color: #f6b83f36; }
+.brand span, .eyebrow { color: var(--mint); }
+.brand small { color: var(--orange); }
+.stage { border-color: #f6b83f42; background: #f6b83f0b; }
+.card { background: linear-gradient(145deg, #152d47, #0d2137); box-shadow: 0 14px 40px #02081230; }
+.primary { background: linear-gradient(100deg, var(--mint), var(--orange)); color: #241405; box-shadow: 0 9px 24px #f27a3525; }
+.primary:hover { background: linear-gradient(100deg, #ffd268, #ff9252); }
+.text, a { color: var(--mint); }
+.segmented .on, nav button.selected { background: #5b371f; color: #ffd469; }
+.dot { background: var(--orange); box-shadow: 0 0 0 5px #f27a3520; }
+.quote { background: linear-gradient(145deg, #352617, #17263a); border-color: #f6b83f47; }
+.metric b, .timer { color: var(--mint); }
+
+.hero-art { background: radial-gradient(circle, #f6b83f1d, transparent 68%); }
+.orbit { border-color: #f6b83f59; box-shadow: 0 0 0 22px #f6b83f08, 0 0 0 44px #f27a3505; }
+.orbit::after { background: var(--orange); }
+.bear-crest { width: 230px; height: 230px; position: relative; z-index: 2; filter: drop-shadow(0 16px 25px #02081270); }
+.bear-crest .halo { fill: #101e30; stroke: #f6b83f; stroke-width: 3; }
+.bear-crest .face, .bear-crest .ear { fill: url(#fur); stroke: #ffd66e; stroke-width: 3; }
+.bear-crest .muzzle { fill: #f7d6a1; stroke: #6c351c; stroke-width: 3; }
+.bear-crest .eye { fill: #182031; }
+.bear-crest .nose { fill: #3a1f18; }
+.bear-crest .smile { fill: none; stroke: #3a1f18; stroke-width: 4; stroke-linecap: round; }
+.bear-crest .crown { fill: #ffd45d; stroke: #f27a35; stroke-width: 3; }
+.bear-crest text { fill: #ffd166; font-size: 12px; font-weight: 800; letter-spacing: 3px; text-anchor: middle; }
+.time-medal { position: absolute; right: 23px; top: 55px; z-index: 3; background: #f27a35; color: white; border: 4px solid #071422; border-radius: 99px; padding: 9px 12px; font-size: 13px; font-weight: 850; }
+.art-label { bottom: 16px; color: var(--mint); font-weight: 800; }
+
+.monarch-callout { display: grid; grid-template-columns: 90px 1fr auto; gap: 22px; align-items: center; border: 1px solid #f6b83f55; border-radius: 22px; padding: 18px 24px; margin-bottom: 20px; background: linear-gradient(100deg, #4d2b18b0, #10243a); box-shadow: inset 4px 0 0 var(--orange); }
+.monarch-callout h2 { margin: 4px 0; font-size: 20px; }
+.monarch-callout p { margin: 0; }
+.mini-bear { width: 82px; height: 82px; }
+.mini-bear .bear-crest { width: 82px; height: 82px; }
+.mini-bear .bear-crest text, .mini-bear .bear-crest .crown { display: none; }
+.streak-medal { width: 90px; height: 90px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: #071422; border: 2px solid var(--mint); box-shadow: 0 0 0 7px #f6b83f12; }
+.streak-medal b { font-size: 30px; line-height: 1; color: var(--mint); }
+.streak-medal span { font-size: 9px; color: var(--muted); max-width: 60px; }
+
+.workout { max-width: 860px; }
+.workout-banner { display: flex; align-items: center; gap: 10px; justify-content: center; margin: 18px 0 0; color: var(--mint); font-size: 11px; letter-spacing: 1.6px; }
+.workout-banner b { color: var(--muted); font-weight: 500; letter-spacing: 0; }
+.bear-paw { width: 25px; height: 25px; border-radius: 50%; display: grid; place-items: center; background: var(--orange); color: #fff3d4; box-shadow: -7px -6px 0 -5px #fff3d4, 7px -6px 0 -5px #fff3d4; }
+.dose-pill { border-color: #f6b83f70; color: var(--cream); background: #f6b83f0d; }
+.movement-guide { margin: 24px 0 20px; background: #081827; border: 1px solid #f6b83f45; border-radius: 18px; padding: 14px 18px 16px; overflow: hidden; }
+.visual-title { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; color: var(--mint); font-size: 10px; font-weight: 800; letter-spacing: 1.4px; }
+.visual-title span:last-child { text-align: right; }
+.visual-title b { font-size: 10px; color: var(--muted); font-weight: 500; letter-spacing: 0; }
+.exercise-art { width: 100%; max-width: none; height: auto; min-height: 210px; stroke: var(--cream); stroke-width: 6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.exercise-art .surface { stroke: #506174; stroke-width: 3; }
+.exercise-art .equipment { stroke: #89a0b6; stroke-width: 5; }
+.exercise-art .ghost { stroke: #8ca0b2; opacity: .28; stroke-dasharray: 7 7; }
+.exercise-art .arrow { stroke: var(--orange); stroke-width: 5; stroke-dasharray: 8 5; marker-end: url(#arrowhead); animation: arrowPulse 1.5s infinite; }
+.exercise-art marker path { fill: var(--orange); stroke: none; }
+.exercise-art .target, .exercise-art .towel { stroke: var(--mint); }
+.exercise-art .moving { stroke: var(--mint); animation: lineGlow 1.8s ease-in-out infinite; }
+.exercise-art .divider { stroke: #30445a; stroke-width: 2; stroke-dasharray: 5 8; }
+.exercise-art .step-badge { fill: #132a43; stroke: var(--mint); stroke-width: 2; }
+.exercise-art .step-badge.goal { fill: #6a391b; stroke: var(--orange); }
+.exercise-art .step-text { fill: var(--cream); stroke: none; font-size: 14px; font-weight: 800; text-anchor: middle; }
+.movement-guide figcaption { margin: 2px auto 0; max-width: 650px; color: var(--muted); font-size: 13px; text-align: left; }
+.movement-guide figcaption b { color: var(--mint); }
+.instruction-card { border-left: 4px solid var(--mint); background: #f6b83f0a; border-radius: 0 12px 12px 0; padding: 14px 18px; margin: 20px 0; text-align: left; }
+.instruction-card .instruction { margin: 7px 0; font-size: 16px; }
+.progress-track span { background: linear-gradient(90deg, var(--mint), var(--orange)); }
+#toast { background: #6a3b1e; border-color: #f6b83f; color: #fff8e9; }
+
+@keyframes arrowPulse { 50% { opacity: .35; } }
+@keyframes lineGlow { 50% { filter: drop-shadow(0 0 7px #f6b83f); opacity: .62; } }
+
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr .62fr; gap: 5px; }
+  .hero-art { display: flex; height: 180px; }
+  .hero-art .orbit { width: 150px; height: 150px; }
+  .bear-crest { width: 160px; height: 160px; }
+  .time-medal { right: 2px; top: 30px; font-size: 10px; padding: 6px 8px; }
+  .art-label { display: none; }
+  .monarch-callout { grid-template-columns: 58px 1fr; padding: 15px; gap: 12px; }
+  .mini-bear, .mini-bear .bear-crest { width: 56px; height: 56px; }
+  .streak-medal { grid-column: 1 / -1; width: 100%; height: auto; border-radius: 12px; padding: 9px; flex-direction: row; gap: 8px; }
+  .streak-medal b { font-size: 21px; }
+  .streak-medal span { max-width: none; }
+  .visual-title b { display: none; }
+  .visual-title { grid-template-columns: 1fr 1fr; }
+  .exercise-art { min-height: 150px; }
+  .movement-guide { padding: 12px 8px; }
+  .movement-guide figcaption { padding: 0 8px; font-size: 12px; }
+  .workout h1 { margin-bottom: 10px; }
+}
+
+@media (max-width: 430px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-art { height: 175px; margin-top: -8px; }
+  .hero-art .orbit { width: 160px; height: 160px; }
+  .bear-crest { width: 170px; height: 170px; }
+  .time-medal { right: calc(50% - 94px); }
+}
