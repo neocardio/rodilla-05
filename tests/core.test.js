@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict');const C=require('../core.js');
+assert.equal(C.screen({pain:0}).level,'go');assert.equal(C.screen({pain:3}).level,'adapt');
+for(const flag of ['lock','unstable','noWeight','largeSwelling'])assert.equal(C.screen({pain:0,[flag]:true}).level,'stop');
+for(const flag of ['cold','calf','fever'])assert.equal(C.screen({pain:0,[flag]:true}).level,'urgent');
+const sessions=[1,2,3].map(n=>({phase:0,day:`2026-10-0${n}`,started:`2026-10-0${n}T11:00:00Z`,pre:{level:'go',pain:1},post:{pain:1},next:{pain:1}}));
+const state={phase:0,sessions,clearance:{reviewed:true,approved:true}};
+assert.equal(C.canAdvance({...state,clearance:null}).ok,false);assert.equal(C.canAdvance(state).ok,true);
+assert.equal(C.canAdvance({...state,sessions:sessions.map(s=>({...s,day:'2026-10-01'}))}).ok,false);
+for(const property of ['worse','swelling','unstable'])assert.equal(C.canAdvance({...state,sessions:sessions.map(s=>({...s,next:{pain:1,[property]:true}}))}).ok,false);
+assert.equal(C.canAdvance({...state,sessions:sessions.map(s=>({...s,skipped:true}))}).ok,false);
+assert.equal(C.canAdvance({...state,sessions:sessions.map(s=>({...s,next:null}))}).ok,false);
+assert.equal(C.canAdvance({...state,phase:3}).ok,false);
+assert.equal(C.canAdvance({...state,phase:1}).ok,false);
+assert.equal(C.canAdvance({...state,sessions:sessions.map(s=>({...s,next:{pain:2}}))}).ok,false);
+assert.equal(C.routine(0,'home').length,3);assert.equal(C.routine(0,'gym').some(x=>x.id==='bike'||x.id==='sit'),false);
+assert.equal(C.routine(3,'home',true).length,2);assert.equal(C.day(new Date('2026-10-05T02:00:00Z')),'2026-10-04');
+console.log('Filtros de seguridad, progresión y fecha: OK');
